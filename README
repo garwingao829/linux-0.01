@@ -1,9 +1,5 @@
 
 
-
-		Notes for linux release 0.01
-
-
 		0. Contents of this directory
 
 linux-0.01.tar.Z	- sources to the kernel
@@ -21,9 +17,9 @@ kernel on two different machines.  Currently there are no kernel
 binaries for public viewing, as they have to be recompiled for different
 machines.  You need to compile it with gcc (I use 1.40, don't know if
 1.37.1 will handle all __asm__-directives), after having changed the
-relevant configuration file(s). 
+relevant configuration file(s).
 
-As the version number (0.01) suggests this is not a mature product. 
+As the version number (0.01) suggests this is not a mature product.
 Currently only a subset of AT-hardware is supported (hard-disk, screen,
 keyboard and serial lines), and some of the system calls are not yet
 fully implemented (notably mount/umount aren't even implemented).  See
@@ -34,7 +30,7 @@ in how the system looks like currently.  It will compile and produce a
 working kernel, and though I will help in any way I can to get it
 working on your machine (mail me), it isn't really supported.  Changes
 are frequent, and the first "production" version will probably differ
-wildly from this pre-alpha-release. 
+wildly from this pre-alpha-release.
 
 Hardware needed for running linux:
 	- 386 AT
@@ -173,7 +169,7 @@ Memory is dealt with in two completely different ways - by paging and
 segmentation.  First the 386 VM-space (4GB) is divided into a number of
 segments (currently 64 segments of 64Mb each), the first of which is the
 kernel memory segment, with the complete physical memory identity-mapped
-into it.  All kernel functions live within this area. 
+into it.  All kernel functions live within this area.
 
 Tasks are then given one segment each, to use as they wish. The paging
 mechanism sees to filling the segment with the appropriate pages,
@@ -206,7 +202,7 @@ kernel needed to address due to multi-threading.  One way to inhibit
 race-conditions is to lock everything you need, but as this can lead to
 unnecessary blocking I decided never to lock any data structures (unless
 actually reading or writing to a physical device).  This has the nice
-property that dead-locks cannot happen. 
+property that dead-locks cannot happen.
 
 Sadly it has the not so nice property that race-conditions can happen
 almost everywhere.  These are handled by double-checking allocations etc
@@ -226,7 +222,7 @@ even then you might not want to change from minix.  This is a source
 release for those that are interested in seeing what linux looks like,
 and it's not really supported yet.  Anyone with questions or suggestions
 (even bug-reports if you decide to get it working on your system) is
-encouraged to mail me. 
+encouraged to mail me.
 
 
 		8. Getting it working
@@ -238,14 +234,14 @@ have to change to get a personalized kernel.  Also you must uncomment
 the right "equ" in the file boot/boot.s, telling the bootup-routine what
 kind of device your A-floppy is.  After that a simple "make" should make
 the file "Image", which you can copy to a floppy (cp Image /dev/PS0 is
-what I use with a 1.44Mb floppy).  That's it. 
+what I use with a 1.44Mb floppy).  That's it.
 
 Without any programs to run, though, the kernel cannot do anything. You
 should find binaries for 'update' and 'bash' at the same place you found
 this, which will have to be put into the '/bin' directory on the
 specified root-device (specified in config.h). Bash must be found under
 the name '/bin/sh', as that's what the kernel currently executes. Happy
-hacking. 
+hacking.
 
 
 		Linus Torvalds		"torvalds@kruuna.helsinki.fi"
