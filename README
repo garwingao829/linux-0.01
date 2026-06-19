@@ -1,6 +1,8 @@
-This is a free minix-like kernel for i386(+) based AT-machines.Full source is included, and this source has been used to produce a running kernel on two different machines.
-Currently there are no kernel binaries for public viewing, as they have to be recompiled for different machines.
+This is a free minix-like kernel for i386(+) based AT-machinesFull source is included, and this source has been used to produce a running kernel on two different machines.
+Currently there are no kernel binaries for public viewffing, as they have to be recompiled for different machines.
 You need to compile it with gcc (I use 1.40, don't know if 1.37.1 will handle all __asm__-directives), after having changed the relevant configuration file(s)
+hhhh
+
 As the version number (0.01) suggests this is not a mature product
 Currently only a subset of AT-hardware is supported (hard-disk, screen, keyboard and serial lines), and some of the system calls are not yet fully implemented (notably mount/umount aren't even implemented).
 See comments or readme's in the code
