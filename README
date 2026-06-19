@@ -1,16 +1,5 @@
 
 
-		0. Contents of this directory
-
-linux-0.01.tar.Z	- sources to the kernel
-bash.Z			- compressed bash binary if you want to test it
-update.Z		- compressed update binary
-RELNOTES-0.01		- this file
-
-
-		1. Short intro
-
-
 This is a free minix-like kernel for i386(+) based AT-machines.  Full
 source is included, and this source has been used to produce a running
 kernel on two different machines.  Currently there are no kernel
